@@ -20,8 +20,8 @@ function App() {
       setLocation(respone.data.location.region);
       setTimezone(respone.data.location.timezone);
       setIsp(respone.data.isp);
-      setLatitude(respone.location.lat);
-      setLongitude(respone.location.lng);
+      setLatitude(respone.data.location.lat);
+      setLongitude(respone.data.location.lng);
       console.log(respone);
     });
 
