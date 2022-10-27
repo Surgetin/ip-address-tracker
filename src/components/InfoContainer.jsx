@@ -1,30 +1,32 @@
 import React from "react";
 
-const infos = [ 
-    {
-        header: "IP Address",
-        fetchedInfo: "122.312.321.23"
-    },
-    {
-        header: "Location",
-        fetchedInfo: "Budapest, Kelenföld 1134"
-    },
-    {
-        header: "Timezone",
-        fetchedInfo: "UTC-05:00"
-    },
-    {
-        header: "ISP",
-        fetchedInfo: "Vodafone"
-    },
-]   
 
-const MapSection = () => {
+const MapSection = () => {     
+    
+    const infoData = [ 
+        {
+            header: "IP Address",
+            fetchedInfo: "89.134.2.91",
+        },
+        {
+            header: "Location",
+            fetchedInfo: "location",
+        },
+        {
+            header: "Timezone",
+            fetchedInfo: `UTC ${"timezone"}`,
+        },
+        {
+            header: "ISP",
+            fetchedInfo: "Isp",
+        },
+    ]
+    
     return (
         <div className="info_container">
             <div className="info_content">
                 <div className="info_lists">
-                    {infos.map((info) => (
+                    {infoData.map((info) => (
                         <div className="info_list">
                             <h1 className="info_header">
                                 {info.header}
