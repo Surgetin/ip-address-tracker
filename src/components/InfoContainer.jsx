@@ -1,20 +1,24 @@
 import React from "react";
 
-const InfoContainer = ({ip, location, timezone, isp}) => {     
+const InfoContainer = ({ipAddress, location, timezone, isp}) => {     
     const infoData = [ 
         {
+            id: 1,
             header: "IP Address",
-            fetchedInfo: ip,
+            fetchedInfo: ipAddress,
         },
         {
+            id: 2,
             header: "Location",
             fetchedInfo: location,
         },
         {
+            id: 3,
             header: "Timezone",
             fetchedInfo: `UTC ${timezone}`,
         },
         {
+            id: 4,
             header: "ISP",
             fetchedInfo: isp,
         },
@@ -25,7 +29,7 @@ const InfoContainer = ({ip, location, timezone, isp}) => {
             <div className="info_content">
                 <div className="info_lists">
                     {infoData.map((info) => (
-                        <div key={info.key} className="info_list">
+                        <div key={info.id} className="info_list">
                             <h1 className="info_header">
                                 {info.header}
                             </h1>

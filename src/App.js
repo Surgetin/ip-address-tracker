@@ -5,18 +5,18 @@ import MapSection from "./components/MapSection";
 
 function App() {
   const [localIp, setLocalIp] = useState("");
-  const [ip, setIP] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
   const [location, setLocation] = useState("");
   const [timezone, setTimezone] = useState("");
   const [isp, setIsp] = useState("");
-  const [latitude, setLatitude] = useState("40.65");
-  const [longitude, setLongitude] = useState("-73.94");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
   const url = `https://geo.ipify.org/api/v2/country?apiKey=at_miiZFc28lwpXDJQFOVItcXbaKlzay&ipAddress=${localIp}`;
 
   const getData = async () => {
     axios.get(url).then((respone) => {
-      setIP(respone.data.ip);
+      setIpAddress(respone.data.ip);
       setLocation(respone.data.location.region);
       setTimezone(respone.data.location.timezone);
       setIsp(respone.data.isp);
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <SearchSection
-        ipAddress={ip}
+        ipAddress={ipAddress}
         location={location}
         timezone={timezone}
         isp={isp}
