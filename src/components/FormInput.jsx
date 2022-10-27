@@ -1,13 +1,12 @@
 import React from "react";
 import arrow from '../images/icon-arrow.svg';
 
-const FormInput = () => {
-    
+const FormInput = () => {    
     return (
         <div className="formInput">
             <form className="form_container">
                 <input type="text" id="input" required={true} placeholder="Search for any IP address or domain"/>
-                <button type="submit" className="input_btn" onclick="handleIpTracker()">
+                <button type="submit" className="input_btn">
                     <img src={arrow} alt="arrow"/>
                 </button>
             </form>
