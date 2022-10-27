@@ -2,6 +2,8 @@
 
 :root {
     --font-family: "Poppins", sans-serif;
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
 }
 
 *, *::before, *::after {
@@ -16,7 +18,7 @@ body {
 
 .search_container {
     width: 100%;
-    height: 30vh;
+    height: 32vh;
     background-image: url("../images/pattern-bg.png");
     background-color: hsl(228, 45%, 44%);
     background-size: cover;
@@ -52,7 +54,7 @@ body {
 
 .form_container input {
     font-size: 1.1rem;
-    color: rgb(71, 71, 71);
+    color: var(--dark-gray);
     width: 30rem;
 } 
 
@@ -74,38 +76,56 @@ body {
 
 .info_container {
     position: absolute;
-    top: 25%;  
+    top: 28%;  
     left: 50%; 
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -28%);
 
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 2.5rem 2rem;
+    padding: 2rem;
     background-color: white;
-    width: 75%;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.452);
+    width: 60rem;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
+    z-index: 2;
 }
 
-.info_container .info_lists {
-    color: rgb(110, 110, 110);
+.info_lists {
+    color: var(--dark-gray);
     display: flex;
     gap: 2rem;
     list-style: none;
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: 2px;
+}
+
+.info_list {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.info_header {
+    font-size: .8rem;
+    letter-spacing: 2px;
+    color: var(--dark-gray);
     text-transform: uppercase;
 }
 
-.info_lists li {
-    position: relative;
-    width: 200px;
+.info_content {
+    font-weight: bold;
+    color: var(--very-dark-gray);
+    font-size: 1.4rem;
 }
 
 .map_container {
+    position: relative;
     width: 100%;
-    height: 70vh;
+    height: 68vh;
     background-color: white;
+    z-index: 1;
 }
