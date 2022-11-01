@@ -40,7 +40,8 @@ body {
     margin: 0 auto;
     margin-top: 1.5rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.452);
-    width: 30rem;
+    width: 80%;
+    max-width: 30rem;
     border-radius: 20px;
 }
 
@@ -55,7 +56,7 @@ body {
 .form_container input {
     font-size: 1.1rem;
     color: var(--dark-gray);
-    width: 30rem;
+    width: 100%;
 } 
 
 .input_btn {
@@ -85,7 +86,7 @@ body {
     margin: 0 auto;
     padding: 2rem;
     background-color: white;
-    width: 65rem;
+    width: 80%;
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     z-index: 2;
@@ -104,7 +105,7 @@ body {
 .info_list {
     position: relative;
     height: 100%;
-    width: 220px;
+    width: 100%;
     display: flex;
     gap: .5rem;
     flex-direction: column;
@@ -130,6 +131,7 @@ body {
 }
 
 .info_content {
+    width: 100%;
     font-weight: bold;
     color: var(--very-dark-gray);
     font-size: 1.4rem;
@@ -141,4 +143,27 @@ body {
     height: 68vh;
     background-color: white;
     z-index: 1;
+}
+
+@media screen and (max-width: 860px){
+    .info_container {
+        margin-top: 2rem;
+    }
+
+    .info_lists {
+        flex-direction: column;
+    }
+
+    .info_list {
+        align-items: center;
+    }
+
+    .info_content {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .info_list::after {
+        display: none;
+    }
 }
