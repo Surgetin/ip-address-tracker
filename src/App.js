@@ -4,7 +4,6 @@ import SearchSection from "./components/SearchSection";
 import MapSection from "./components/MapSection";
 
 function App() {
-  const [localIp, setLocalIp] = useState("");
   const [ipAddress, setIpAddress] = useState("");
   const [location, setLocation] = useState("");
   const [timezone, setTimezone] = useState("");
@@ -12,7 +11,7 @@ function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
-  const url = `https://geo.ipify.org/api/v2/country?apiKey=at_miiZFc28lwpXDJQFOVItcXbaKlzay&ipAddress=${localIp}`;
+  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_miiZFc28lwpXDJQFOVItcXbaKlzay&ipAddress=${ipAddress}`;
 
   const getData = async () => {
     axios.get(url).then((respone) => {
@@ -24,9 +23,6 @@ function App() {
       setLongitude(respone.data.location.lng);
       console.log(respone);
     });
-
-    const res = await axios.get("https://geolocation-db.com/json/");
-    setLocalIp(res.data.IPv4);
   };
 
   useEffect(() => {
