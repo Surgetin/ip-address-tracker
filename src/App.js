@@ -11,21 +11,20 @@ function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
-  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_miiZFc28lwpXDJQFOVItcXbaKlzay&ipAddress=${ipAddress}`;
-
-  const getData = async () => {
-    axios.get(url).then((respone) => {
-      setIpAddress(respone.data.ip);
-      setLocation(respone.data.location.region);
-      setTimezone(respone.data.location.timezone);
-      setIsp(respone.data.isp);
-      setLatitude(respone.data.location.lat);
-      setLongitude(respone.data.location.lng);
-      console.log(respone);
-    });
-  };
+  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UIog4dlM2wvVN14D9kZMf1tmAMhxp&ipAddress=${ipAddress}`;
 
   useEffect(() => {
+    const getData = async () => {
+      axios.get(url).then((respone) => {
+        setIpAddress(respone.data.ip);
+        setLocation(respone.data.location.region);
+        setTimezone(respone.data.location.timezone);
+        setIsp(respone.data.isp);
+        setLatitude(respone.data.location.lat);
+        setLongitude(respone.data.location.lng);
+      });
+    };
+
     getData();
   }, [url]);
 
@@ -36,7 +35,7 @@ function App() {
         location={location}
         timezone={timezone}
         isp={isp}
-        getData={getData}
+        setIpAddress={setIpAddress}
       />
       <MapSection latitude={latitude} longitude={longitude} />
     </div>
