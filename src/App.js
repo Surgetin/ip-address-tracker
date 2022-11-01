@@ -3,6 +3,8 @@ import axios from "axios";
 import SearchSection from "./components/SearchSection";
 import MapSection from "./components/MapSection";
 
+const BASE_URL = "https://geo.ipify.org/api/v2/country,city?";
+
 function App() {
   const [ipAddress, setIpAddress] = useState("");
   const [location, setLocation] = useState("");
@@ -11,7 +13,7 @@ function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
-  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UIog4dlM2wvVN14D9kZMf1tmAMhxp&ipAddress=${ipAddress}`;
+  const url = `${BASE_URL}apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${ipAddress}`;
 
   useEffect(() => {
     const getData = async () => {
