@@ -36,6 +36,7 @@ function App() {
         location={location}
         timezone={timezone}
         isp={isp}
+        getData={getData}
       />
       <MapSection latitude={latitude} longitude={longitude} />
     </div>

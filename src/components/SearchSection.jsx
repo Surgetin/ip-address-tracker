@@ -2,12 +2,12 @@ import React from "react";
 import FormInput from "./FormInput";
 import InfoContainer from "./InfoContainer";
 
-const SearchSection = ({ipAddress, location, timezone, isp}) => {
+const SearchSection = ({ipAddress, location, timezone, isp, getData}) => {
     return (
         <div className="search_container">
             <h1 className="search_heading">IP Address Tracker</h1>   
             
-            <FormInput />
+            <FormInput getData={getData}/>
             <InfoContainer 
                 ipAddress={ipAddress}
                 location={location}
