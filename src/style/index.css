@@ -148,10 +148,12 @@ body {
 @media screen and (max-width: 860px){
     .info_container {
         margin-top: 2rem;
+        padding: .8rem 1rem;
     }
 
     .info_lists {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .info_list {
@@ -165,5 +167,15 @@ body {
     
     .info_list::after {
         display: none;
+    }
+
+    .form_container input {
+        padding: 1.2rem .8rem 1.2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 270px){
+    .info_container {
+        margin-top: 4rem;
     }
 }

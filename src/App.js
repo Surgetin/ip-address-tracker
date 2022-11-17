@@ -16,18 +16,22 @@ function App() {
   const url = `${BASE_URL}apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${ipAddress}`;
 
   useEffect(() => {
-    const getData = async () => {
-      axios.get(url).then((respone) => {
-        setIpAddress(respone.data.ip);
-        setLocation(respone.data.location.region);
-        setTimezone(respone.data.location.timezone);
-        setIsp(respone.data.isp);
-        setLatitude(respone.data.location.lat);
-        setLongitude(respone.data.location.lng);
-      });
-    };
+    try {
+      const getData = async () => {
+        axios.get(url).then((respone) => {
+          setIpAddress(respone.data.ip);
+          setLocation(respone.data.location.region);
+          setTimezone(respone.data.location.timezone);
+          setIsp(respone.data.isp);
+          setLatitude(respone.data.location.lat);
+          setLongitude(respone.data.location.lng);
+        });
+      };
 
-    getData();
+      getData();
+    } catch (error) {
+      console.trace(error);
+    }
   }, [url]);
 
   return (
